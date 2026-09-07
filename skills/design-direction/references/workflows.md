@@ -71,7 +71,7 @@ diagnosed it, and authorization status is explicit.
 2. Inspect the stack, design system, shared components, and user-owned changes.
 3. Map every changed control to an existing product primitive or a justified new variant.
 4. Make the smallest coherent implementation of the redesign.
-5. Run project checks.
+5. Run project checks relevant to the changed behavior or build boundary.
 6. Validate the rendered interface at relevant widths and input methods.
 7. Exercise the primary action, state transitions, collection continuity, focus, keyboard flow, and custom controls.
    If an ARIA composite role such as `listbox`, `tablist`, `grid`, or
@@ -83,11 +83,11 @@ diagnosed it, and authorization status is explicit.
     the implemented direction; do not convert that decision into a universal
     skill rule.
 
-Inventory every element that combines background, border, radius, or shadow;
-name its function and report the total by region. A cosmetic class rename does
-not count as a rendered change.
+When changing framing or layout, inspect the affected region's use of
+background, border, radius, and shadow, and preserve only frames with a
+function. A cosmetic class rename does not count as a rendered change.
 
-**Complete when:** checks pass, rendered evidence confirms the task and context lock, every remaining frame has a named function, and limitations are explicit.
+**Complete when:** checks pass, rendered evidence confirms the task and context lock, every remaining frame in the affected region has a named function, and limitations are explicit.
 
 ## Capture preference
 

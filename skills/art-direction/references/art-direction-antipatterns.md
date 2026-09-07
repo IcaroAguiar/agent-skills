@@ -10,7 +10,10 @@ The result is a direct stack of available headers, cards, badges, and buttons.
 
 ## Style-token makeover
 
-Only color, typeface, radius, spacing, or shadow changes.
+A claimed new art direction changes only color, typeface, radius, spacing, or
+shadow without addressing the requested composition or product identity.
+An explicitly requested token or spacing refinement within an approved
+direction is valid; do not expand that task to avoid this label.
 
 ## Decorative premium simulation
 

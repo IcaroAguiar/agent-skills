@@ -1,11 +1,13 @@
 ---
 name: record-real-dev-e2e
-description: Record credible E2E video evidence for any feature or repository when the user asks for real-environment testing, natural user interaction, a product tutorial, state-transition proof, regression evidence, or reviewer-ready video attachments across GUI, mobile, CLI, or API surfaces.
+description: Record real application workflows when a video, tutorial, or recording is part of the requested evidence.
 ---
 
 # Record Real Dev E2E
 
 Produce audience-facing video proof from the real application surface, independent of product domain, repository layout, framework, feature type, interaction medium, or delivery channel. The proof must distinguish what was exercised through the claimed surface, what was prepared outside it, and what remains unverified.
+
+Use this workflow when the deliverable includes a recording. Ordinary behavior verification can use the relevant browser, CLI, or API checks without producing a video.
 
 ## Reference Router
 

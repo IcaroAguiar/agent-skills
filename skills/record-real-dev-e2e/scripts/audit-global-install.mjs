@@ -4,7 +4,7 @@ import { homedir } from "node:os";
 import { basename, join } from "node:path";
 
 const skillName = "record-real-dev-e2e";
-const home = homedir();
+const home = process.argv[2] ?? homedir();
 const canonical = join(home, ".agents", "skills", skillName);
 
 if (!existsSync(canonical)) {
@@ -15,26 +15,26 @@ if (!existsSync(canonical)) {
 const canonicalReal = realpathSync(canonical);
 const skillDirs = [];
 
-function scan(path, depth) {
-  if (depth > 4) return;
-  let entries;
+function childDirectories(path) {
   try {
-    entries = readdirSync(path, { withFileTypes: true });
+    return readdirSync(path, { withFileTypes: true })
+      .filter((entry) => entry.isDirectory() || entry.isSymbolicLink())
+      .map((entry) => entry.name);
   } catch {
-    return;
-  }
-
-  for (const entry of entries) {
-    if (!entry.isDirectory()) continue;
-    if (depth === 0 && !entry.name.startsWith(".")) continue;
-    if ([".cache", ".npm", ".local", ".Trash", "node_modules"].includes(entry.name)) continue;
-    const child = join(path, entry.name);
-    if (entry.name === "skills") skillDirs.push(child);
-    if (entry.name !== "skills") scan(child, depth + 1);
+    return [];
   }
 }
 
-scan(home, 0);
+// Global catalogs live directly under a harness root, not under its backups or projects.
+for (const name of childDirectories(home)) {
+  if (name.startsWith(".")) skillDirs.push(join(home, name, "skills"));
+}
+for (const name of childDirectories(join(home, ".config"))) {
+  skillDirs.push(join(home, ".config", name, "skills"));
+}
+for (const name of ["config", "antigravity", "antigravity-cli", "antigravity-ide"]) {
+  skillDirs.push(join(home, ".gemini", name, "skills"));
+}
 
 const installed = new Set([canonical]);
 const failures = [];

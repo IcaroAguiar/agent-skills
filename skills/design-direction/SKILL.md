@@ -14,6 +14,7 @@ Shape the interface around its task, product context, and users. Apply the same 
 - **Redesign** — diagnose an existing interface and propose a complete replacement without editing production.
 - **Implement** — apply an authorized redesign, validate it, and prove the result.
 - **Capture preference** — convert a reference or comment into a candidate rule.
+- **Refine craft** — polish an already sound interface through typography, spacing, surfaces, icons, motion, responsive behavior, and interaction feedback without changing its product contract.
 
 Combine review and redesign when the request is to improve or refactor. Enter
 `Implement` only when the request already authorizes editing or the user
@@ -29,11 +30,12 @@ direction pass.
 
 ## 2. Establish the context lock
 
-Read:
-
-- [foundations.md](references/foundations.md) for precedence and evidence limits;
-- [contexts.md](references/contexts.md) to classify the product profile and surface mode;
-- [workflows.md](references/workflows.md) for the selected branch.
+Reuse an approved context lock when its task, data, permissions, states, and
+platform assumptions still apply. When establishing or changing it, read
+[foundations.md](references/foundations.md) for precedence and evidence limits
+and [contexts.md](references/contexts.md) for the product profile and surface
+mode. Read only the selected branch in [workflows.md](references/workflows.md).
+For a bounded edit, record the changed assumptions and preserve the rest.
 
 Record the primary task, surface mode, usage frequency, navigation topology, minimum functional density, action geography, required data, and required states. Treat these as the **context lock**: visual refinement may reorganize them, but may not silently change their purpose.
 
@@ -43,7 +45,7 @@ Distinguish observation, inference, preference, requirement, and unverified beha
 
 ## 3. Load only relevant reference
 
-For create, review, redesign, or implement, read [design-direction.md](references/design-direction.md), then load the modules that match the artifact. Read [antipattern-index.md](references/antipattern-index.md) when diagnosing an existing interface, then open only the authoritative modules that match observed signals:
+Read [design-direction.md](references/design-direction.md) when establishing or revising the design contract. Load topic modules for the changed elements or observed problems; an unchanged approved element does not require a new reading pass. Read [antipattern-index.md](references/antipattern-index.md) when diagnosing an existing interface, then open only the authoritative modules that match observed signals:
 
 | Condition | Read |
 |---|---|
@@ -55,7 +57,9 @@ For create, review, redesign, or implement, read [design-direction.md](reference
 | Status, feedback, alerts, metadata, or async behavior | [states-and-feedback.md](references/states-and-feedback.md) |
 | Lists, tables, repeated actions, overflow, or lifecycle transitions | [operational-collections.md](references/operational-collections.md) |
 
-For review or self-evaluation, also read [evaluation.md](references/evaluation.md). Before writing a structured deliverable, read [output-templates.md](references/output-templates.md).
+For craft refinement, prefer the smallest relevant modules above. Preserve content and behavior, reject generic ornament, and check hierarchy, typography, surfaces, icon consistency, motion purpose, accessibility, responsive behavior, and performance as one coherent pass. Do not load a separate catch-all design workflow.
+
+For a scored review, read [evaluation.md](references/evaluation.md). Read [output-templates.md](references/output-templates.md) when the requested deliverable needs that structure. For bounded implementation, verify the affected behavior and visual conditions without rescoring unrelated surfaces.
 
 For preference capture, read [preference-capture.md](references/preference-capture.md) and the single authoritative module the candidate would change. Read [visual-references.md](references/visual-references.md) when researching precedent. Read [portability.md](references/portability.md) only when adapting the skill to another harness.
 

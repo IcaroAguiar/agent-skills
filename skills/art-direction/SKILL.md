@@ -1,6 +1,6 @@
 ---
 name: art-direction
-description: Art-direct structurally sound web or mobile interfaces. Use to collaboratively explore and approve a product-specific direction; refine a partially approved direction; translate a visual reference into contextual rules; execute an approved direction; audit authorship and taste; or continue a passing design-direction result that still feels generic.
+description: Develop, refine, implement, or audit a product-specific visual direction for a structurally sound interface.
 ---
 
 # Art Direction
@@ -11,8 +11,9 @@ unclear; execute directly when the direction is already explicit or approved.
 
 ## 1. Establish the handoff
 
-Receive a passing context lock from `design-direction`, then read
-[foundations-and-handoff.md](references/foundations-and-handoff.md). Preserve
+Reuse the passing context lock from `design-direction` when it is still valid
+for the affected surface. Read [foundations-and-handoff.md](references/foundations-and-handoff.md)
+when establishing or changing that handoff. Preserve
 the inherited task, data, permissions, lifecycle, consequences, accessibility,
 and platform constraints while changing their presentation.
 
@@ -40,17 +41,17 @@ named. For `audit` and `explore`, follow the selected workflow and stop at its
 completion criterion. `translate-reference` must name the next mode. The
 remaining numbered steps are the `refine` and `execute` path.
 
-## Execute lock
+## Scope the direction work
 
-Follow this sequence:
+For a new direction, establish context and composition before specifying the
+visual system, components, assets, behavior, and platform adaptation. Let real
+dependencies determine the order.
 
-```text
-context -> posture -> thesis -> composition -> visual system -> components
--> assets -> behavior -> states -> screens -> platform adaptation -> revalidation
-```
-
-Use concrete, buildable terms. Each decision names what changes in the rendered
-result and why it fits this product, task, and platform.
+For bounded refinement or execution, reuse approved context and decisions.
+Apply the following sections and references only to dimensions affected by the
+change or by a newly observed failure. Preserve existing evidence where its
+conditions remain valid; do not repeat declarations or reconsider unchanged
+choices. Revalidate the affected contract and rendered result before completion.
 
 ## 3. Interpret context
 
@@ -65,8 +66,9 @@ physical context, and expected visual maturity. Read
 [consumer](contexts/consumer-products.md), or
 [institutional](contexts/institutional-products.md).
 
-**Complete when:** every context axis is explicit, the expression budget is
-bounded, and exactly one closest context module has been applied.
+**Complete when:** the relevant context and expression budget are explicit or
+inherited from an approved decision, and any changed context has been checked
+against the closest applicable module.
 
 ## 4. Commit to a direction
 
@@ -94,8 +96,9 @@ form one hierarchy rather than a collection of effects.
 
 ## 6. Specify components and assets
 
-For every material component, state its function, behavior, states, rationale,
-and strongest rejected alternative. Inventory critical assets with function,
+For each new or materially changed component, state its function, behavior,
+states, and rationale. Compare alternatives when the choice is unresolved.
+Inventory new or changed critical assets with function,
 placement, direction, variants, fallback, and genericity risk. Read
 [contextual-components.md](references/contextual-components.md) and
 [asset-direction.md](references/asset-direction.md).
@@ -122,12 +125,14 @@ composition.
 
 ## 8. Countercheck, revalidate, and deliver
 
-Run [art-direction-antipatterns.md](references/art-direction-antipatterns.md),
-then execute every applicable hard gate in
-[behavioral-revalidation.md](references/behavioral-revalidation.md) before the
-authorship score in [authorship-evaluation.md](references/authorship-evaluation.md)
-and visual classification in [validation-gates.md](references/validation-gates.md).
-Return the recorded result to `design-direction` for final revalidation.
+Check the changed surface against relevant
+[antipatterns](references/art-direction-antipatterns.md) and
+[behavioral gates](references/behavioral-revalidation.md). Use
+[authorship evaluation](references/authorship-evaluation.md) and
+[visual classification](references/validation-gates.md) when the deliverable
+includes those judgments. Revalidate affected `design-direction` invariants;
+reopen the full context lock only when task, data, permissions, lifecycle,
+accessibility, or platform assumptions have changed.
 
 For user-visible implementation, provide a before/after pair whenever a
 trustworthy baseline is available. Keep state, viewport, theme, data, content,
@@ -136,14 +141,15 @@ proposal, not as factual implementation evidence. When the workflow remains
 interactive, ask the user to accept, refine, or reject the direction; scope any
 recorded preference before persisting it.
 
-Use [executable-direction.md](templates/executable-direction.md); for a journey,
-also use [multi-screen-system.md](templates/multi-screen-system.md). Use the
-branch template for reference translation or audit.
+Use [executable-direction.md](templates/executable-direction.md) when delivering
+a direction specification and [multi-screen-system.md](templates/multi-screen-system.md)
+for a journey specification. A bounded refinement may report only the changed
+decisions and evidence. Use the branch template for reference translation or audit.
 
 Read [portability.md](references/portability.md) only when adapting the skill to
 another harness.
 
-**Complete when:** every applicable hard gate passes, each unsupported check is
-`N/V` with its effect on the claim, the authorship score and classification are
-evidence-bounded, the branch template is exhaustive, and the renewed
-`design-direction` verdict accepts the inherited contract.
+**Complete when:** the requested change is rendered and verified, every
+applicable hard gate passes, unsupported checks are `N/V` with their effect on
+the claim, and the inherited contract remains valid. Any requested score,
+classification, or specification must be bounded by the available evidence.

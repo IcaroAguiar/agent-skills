@@ -6,7 +6,11 @@ platform contract in a rendered runtime.
 
 ## Hard gates
 
-Run these gates before visual scoring. A single `FAIL` returns the work to
+For a new direction or a changed journey, run the applicable gates below before
+visual scoring. For a bounded visual refinement, select gates affected by the
+change, verify them on the rendered result, and reuse unchanged evidence only
+while its conditions remain valid. Do not add journey states merely to fill a
+checklist. A single `FAIL` returns the affected work to
 `design-direction`; it cannot be offset by taste, differentiation, or a
 high-quality screenshot.
 
@@ -55,9 +59,10 @@ phone-shaped browser viewport as proof of native mobile behavior.
 
 ### 6. Critical-state evidence
 
-Capture the states that determine the journey, not only the hero frame. At a
-minimum include initial, selected or in-progress, prerequisite-complete,
-action-ready, error or unavailable, and recovery or review. Each evidence item
+Capture the states that determine the affected journey. For a full journey,
+include initial, selected or in-progress, prerequisite-complete, action-ready,
+error or unavailable, and recovery or review when those states exist. For a
+bounded refinement, capture the changed states and relevant regressions. Each evidence item
 must name the observable state and the requirement it proves.
 
 ### 7. Runtime and platform truth
