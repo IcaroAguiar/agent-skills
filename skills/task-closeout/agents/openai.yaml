@@ -1,0 +1,4 @@
+interface:
+  display_name: "Fechamento de tarefas"
+  short_description: "Diagnostique o checkout e finalize sem resíduos"
+  default_prompt: "Use $task-closeout para analisar este checkout e finalizar a tarefa com a entrega verificada e o workspace organizado."
